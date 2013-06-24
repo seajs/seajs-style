@@ -40,6 +40,7 @@
   }
 
 
+  // Register as module
   define("seajs-style-debug", [], {})
 
 })(seajs);
