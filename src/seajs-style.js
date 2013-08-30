@@ -1,7 +1,7 @@
 /**
  * The Sea.js plugin for embedding style text in JavaScript code
  */
-(function(seajs) {
+define(function() {
 
   var RE_NON_WORD = /\W/g
   var doc = document
@@ -39,9 +39,4 @@
     }
   }
 
-
-  // Register as module
-  define("seajs-style", [], {})
-
-})(seajs);
-
+});
