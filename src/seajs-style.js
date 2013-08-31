@@ -7,6 +7,7 @@ define(function() {
   var doc = document
   var head = document.getElementsByTagName('head')[0] ||
       document.documentElement
+  var styleNode
 
   seajs.importStyle = function(cssText, id) {
     if (id) {
@@ -17,11 +18,18 @@ define(function() {
       if (doc.getElementById(id)) return
     }
 
-    var element = doc.createElement('style')
-    id && (element.id = id)
+    var element
 
-    // Adds to DOM first to avoid the css hack invalid
-    head.appendChild(element)
+    // Don't share styleNode when id is spectied
+    if (!styleNode || id) {
+      element = doc.createElement('style')
+      id && (element.id = id)
+
+      // Adds to DOM first to avoid the css hack invalid
+      head.appendChild(element)
+    } else {
+      element = styleNode
+    }
 
     // IE
     if (element.styleSheet) {
@@ -31,11 +39,15 @@ define(function() {
         throw new Error('Exceed the maximal count of style tags in IE')
       }
 
-      element.styleSheet.cssText = cssText
+      element.styleSheet.cssText += cssText
     }
     // W3C
     else {
       element.appendChild(doc.createTextNode(cssText))
+    }
+
+    if (!id) {
+      styleNode = element
     }
   }
 
