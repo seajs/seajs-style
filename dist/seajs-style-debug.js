@@ -1,7 +1,7 @@
 /**
  * The Sea.js plugin for embedding style text in JavaScript code
  */
-define("seajs/seajs-style/1.0.1/seajs-style-debug", [], function() {
+define("seajs/seajs-style/1.0.2/seajs-style-debug", [], function() {
     var RE_NON_WORD = /\W/g;
     var doc = document;
     var head = document.getElementsByTagName("head")[0] || document.documentElement;
@@ -39,4 +39,4 @@ define("seajs/seajs-style/1.0.1/seajs-style-debug", [], function() {
     };
 });
 
-seajs.use("seajs/seajs-style/1.0.1/seajs-style-debug");
+seajs.require("seajs/seajs-style/1.0.2/seajs-style-debug");
