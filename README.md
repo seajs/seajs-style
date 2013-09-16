@@ -4,7 +4,7 @@ seajs-style
 A Sea.js plugin for embedding style text in JavaScript code
 
 
-> To use seajs-style@1.0.2+,  please use seajs@2.2.0+ !
+> seajs-style@1.0.2+ is compatible with seajs@2.2.0+ !
 
 
 
