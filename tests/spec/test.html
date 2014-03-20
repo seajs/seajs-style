@@ -9,11 +9,12 @@
 <div id="out"></div>
 <script>
 
-  seajs.config({
-    preload: ["../../dist/seajs-style"]
+//  seajs.config({
+//    preload: ["../../dist/seajs-style"]
+//  })
+  seajs.use("../../dist/seajs-style", function() {
+    seajs.use("./main")
   })
-
-  seajs.use("./main")
 
 </script>
 </body>
