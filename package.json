@@ -1,5 +1,4 @@
 {
-  "family": "seajs",
   "name": "seajs-style",
   "version": "1.0.2",
   "description": "A Sea.js plugin for embedding style text in JavaScript code",
@@ -11,6 +10,9 @@
   },
   "devDependencies": {
     "seatools": "*"
+  },
+  "spm": {
+    "main": "dist/seajs-style.js"
   },
   "config": {
     "plugin-concat": [
