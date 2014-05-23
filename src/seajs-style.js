@@ -31,7 +31,7 @@ seajs.importStyle = function(cssText, id) {
   }
 
   // IE
-  if (element.styleSheet) {
+  if (element.styleSheet !== undefined) {
 
     // http://support.microsoft.com/kb/262161
     if (doc.getElementsByTagName('style').length > 31) {
